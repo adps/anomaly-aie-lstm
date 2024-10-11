@@ -1,0 +1,47 @@
+# To change the project to compile and run,
+# change 'project' under run_settings
+
+example_projects:
+  - prj_single_model_2buffs:
+      # This project only supports a single graph and model
+      graphs:
+        - models:
+            - A-2
+  - prj_par_models_2buffs:
+      # This project supports multiple graphs in parallel
+      # up to a maximum of 4 (5 GMIOs used per model
+      # and there are only 24 channels on the VEK280)
+      graphs:
+        - models:
+            - A-1
+        - models:
+            - A-2
+        - models:
+            - A-3
+        - models:
+            - A-7
+  - prj_par_tdm_models_2buffs:
+      # This is a placeholder for a future TDM-based project
+      # Additional parallel graphs can be specified by more 'models' entries
+      # All the 'models' must have the same number of channels as
+      # All the channels in each 'models' entry are time-multiplexed 
+      graphs:
+        - models:
+            - A-1
+            - A-2
+        - models:
+            - A-3
+            - A-7
+        - models:
+            - B-1
+            - A-9
+        - models:
+            - D-3
+            - A-6
+
+run_settings:
+  project: prj_single_model_2buffs
+  ssh_hostname: XX.XX.XX.XX # Change this to the IP address assigned to your VEK280 board
+  ssh_port: 22  # Default SSH port
+  ssh_username: petalinux # Default used in the prebuilt
+  ssh_password: password # Change this to your chosen password
