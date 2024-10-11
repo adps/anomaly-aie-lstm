@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: X11
 # */
 
-ROOTFS ?= ${PLATFORM_REPO_PATHS}/sw/versal/xilinx-versal-common-v2023.2/rootfs.ext4
-IMAGE ?= ${PLATFORM_REPO_PATHS}/sw/versal/xilinx-versal-common-v2023.2/Image
+ROOTFS ?= ${PLATFORM_REPO_PATHS}/sw/versal/xilinx-versal-common-v2024.1/rootfs.ext4
+IMAGE ?= ${PLATFORM_REPO_PATHS}/sw/versal/xilinx-versal-common-v2024.1/Image
 SDKTARGETSYSROOT ?= ${SYSROOT}
 
 # Makefile input options
@@ -33,7 +33,7 @@ else
 endif
 PACKAGE_OUT = ./package.$(TARGET)
 
-BASE_PLATFORM ?= ${PLATFORM_REPO_PATHS}/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm
+BASE_PLATFORM ?= ${PLATFORM_REPO_PATHS}/xilinx_vek280_base_202410_1/xilinx_vek280_base_202410_1.xpfm
 
 # Command-line options
 VPP := v++
@@ -96,19 +96,19 @@ __check_defined = \
 		$(error Undefined $1$(if $2, ($2))))
 
 guard-PLATFORM_REPO_PATHS:
-	$(call check_defined, PLATFORM_REPO_PATHS, Set where you downloaded xilinx_vek280_es1_base_202320_1)
+	$(call check_defined, PLATFORM_REPO_PATHS, Set where you downloaded xilinx_vek280_base_202410_1)
 
 guard-ROOTFS:
-	$(call check_defined, ROOTFS, Set to: xilinx-versal-common-v2023.2/rootfs.ext4)
+	$(call check_defined, ROOTFS, Set to: xilinx-versal-common-v2024.1/rootfs.ext4)
 
 guard-IMAGE:
-	$(call check_defined, IMAGE, Set to: xilinx-versal-common-v2023.2/Image)
+	$(call check_defined, IMAGE, Set to: xilinx-versal-common-v2024.1/Image)
 
 guard-CXX:
-	$(call check_defined, CXX, Run: xilinx-versal-common-v2023.2/environment-setup-aarch64-xilinx-linux)
+	$(call check_defined, CXX, Run: xilinx-versal-common-v2024.1/environment-setup-aarch64-xilinx-linux)
 
 guard-SDKTARGETSYSROOT:
-	$(call check_defined, SDKTARGETSYSROOT, Run: xilinx-versal-common-v2023.2/environment-setup-aarch64-xilinx-linux)
+	$(call check_defined, SDKTARGETSYSROOT, Run: xilinx-versal-common-v2024.1/environment-setup-aarch64-xilinx-linux)
 
 ###
 
@@ -201,7 +201,7 @@ package: guard-PLATFORM_REPO_PATHS guard-IMAGE guard-ROOTFS
 		--package.kernel_image=${IMAGE} \
 		--package.defer_aie_run \
 		--package.sd_file embedded_exec.sh \
-		--package.sd_file host.exe ../anomaly_aie_lstm.xsa ../libadf.a \
+		--package.sd_file host.exe ../$(PFM).xsa ../libadf.a \
 		--package.sd_dir ../data
 	@echo "COMPLETE: emulation package created."
 

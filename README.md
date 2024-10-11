@@ -6,8 +6,8 @@ The objective of this work is to investigate a potential Space-deployable hardwa
 
 ## Requirements
 
-| Tool Version    | Vitis 2023.2      |
-| Board           | VEK280 ES1        |
+| Tool Version    | Vitis 2024.1      |
+| Board           | VEK280 REV B3     |
 
 
 ## Overview
@@ -209,9 +209,9 @@ The 'common image' package contains a prebuilt Linux kernel and root file system
 Before starting this tutorial, complete the following steps:
 
 1. Navigate to the directory where you have unzipped the Versal Common Image package.
-2. In a Bash shell, run the ```/Common Images Dir/xilinx-versal-common-v2023.2/environment-setup-cortexa72-cortexa53-xilinx-linux``` script. This script sets up the SDKTARGETSYSROOT and CXX variables. If the script is not present, you must run the ```/Common Images Dir/xilinx-versal-common-v2023.2/sdk.sh```.
-3. Set up your ROOTFS, and IMAGE to point to the ```rootfs.ext4``` and Image files located in the ```/Common Images Dir/xilinx-versal-common-v2023.2``` directory.
-4. Set up your PLATFORM_REPO_PATHS environment variable to ```$XILINX_VITIS/lin64/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm```.
+2. In a Bash shell, run the ```/Common Images Dir/xilinx-versal-common-v2024.1/environment-setup-cortexa72-cortexa53-xilinx-linux``` script. This script sets up the SDKTARGETSYSROOT and CXX variables. If the script is not present, you must run the ```/Common Images Dir/xilinx-versal-common-v2024.1/sdk.sh```.
+3. Set up your ROOTFS, and IMAGE to point to the ```rootfs.ext4``` and Image files located in the ```/Common Images Dir/xilinx-versal-common-v2024.1``` directory.
+4. Set up your PLATFORM_REPO_PATHS environment variable to ```$XILINX_VITIS/lin64/Vitis/2024.1/base_platforms/xilinx_vek280_base_202410_1/xilinx_vek280_base_202410_1.xpfm```.
 
 Several project examples have been provided. See the included white paper for details. In summary, the following are the included projects:
 1. prj_single_model_2buffs - A single-model single-graph project with model data loaded into two buffers, capable of detecting anomalies in a single channel.
