@@ -68,7 +68,7 @@ This project requires Python 3.6+ to run the scripts, in line with the [Telemano
 export PROJECT_PYTHON_PATH=/path/to/python3
 ```
 
-A prebuilt SD card image (`sd_card.img`) is available for download from [VEK280 Anomaly AIE LSTM Prebuilt]([https://link_to_be_updated](https://support.alpha-data.com/share/outgoing/47c426w2-d1g9-hesh-3ajf-4ade9lk9xw30/sd_card.zip) to help you get started quickly. If you need to rebuild the image, please follow the steps in **Section 5**.
+A prebuilt SD card image (`sd_card.img`) is available for download from [VEK280 Anomaly AIE LSTM Prebuilt](https://support.alpha-data.com/share/outgoing/47c426w2-d1g9-hesh-3ajf-4ade9lk9xw30/sd_card.zip) to help you get started quickly. If you need to rebuild the image, please follow the steps in **Section 5**.
 
 ### Configuration
 
