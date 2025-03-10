@@ -178,7 +178,7 @@ run_settings:
   ssh_password: password # Change this to your chosen password
 ```
 
-The run on hardware, use: 
+To run on hardware, use: 
 
 ```sh
 make run_hw
